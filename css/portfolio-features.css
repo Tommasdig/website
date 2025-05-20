@@ -1,0 +1,389 @@
+/* 
+ * Additional CSS for interactive portfolio features
+ * Author: Manus AI
+ * Date: April 13, 2025
+ */
+
+/* ===== PORTFOLIO MODAL ===== */
+.portfolio-modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.portfolio-modal.show {
+    display: block;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--primary-color);
+}
+
+.modal-header {
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.modal-header p {
+    color: var(--dark-gray);
+    margin-bottom: 0;
+}
+
+.modal-body {
+    margin-bottom: 2rem;
+}
+
+.modal-description h5 {
+    color: var(--accent-color);
+    margin: 1.5rem 0 0.5rem;
+}
+
+.modal-description ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== BEFORE-AFTER SLIDER ===== */
+.before-after-slider {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.before-image, .after-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.after-image {
+    width: 50%;
+    border-right: 2px solid var(--white);
+}
+
+.before-image img, .after-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slider-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: var(--white);
+    z-index: 10;
+}
+
+.slider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border: 3px solid var(--white);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: ew-resize;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.before-label, .after-label {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+/* ===== PROJECT GALLERY ===== */
+.project-gallery {
+    margin-bottom: 1.5rem;
+}
+
+.gallery-main {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.gallery-thumbs {
+    display: flex;
+    gap: 1rem;
+}
+
+.thumb {
+    width: 100px;
+    height: 75px;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.thumb.active {
+    opacity: 1;
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.thumb:hover {
+    opacity: 0.9;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ===== SHOPPING CART ===== */
+.cart-icon-container {
+    position: relative;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.cart-count.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 1000;
+    display: none;
+}
+
+.cart-dropdown.show {
+    display: block;
+}
+
+.cart-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.cart-header h5 {
+    margin-bottom: 0;
+    color: var(--accent-color);
+}
+
+.cart-items {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.cart-item-color {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    margin-right: 1rem;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-details h6 {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.cart-item-price {
+    font-size: 0.8rem;
+    color: var(--dark-gray);
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: var(--dark-gray);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.remove-item:hover {
+    color: #dc3545;
+}
+
+.cart-footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--medium-gray);
+}
+
+.cart-total-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.cart-total {
+    color: var(--primary-color);
+}
+
+.checkout-btn {
+    width: 100%;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 991.98px) {
+    .before-after-slider {
+        height: 350px;
+    }
+    
+    .gallery-main {
+        height: 350px;
+    }
+    
+    .modal-content {
+        width: 90%;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .before-after-slider {
+        height: 300px;
+    }
+    
+    .gallery-main {
+        height: 300px;
+    }
+    
+    .gallery-thumbs {
+        justify-content: center;
+    }
+    
+    .cart-dropdown {
+        width: 280px;
+        right: -70px;
+    }
+    
+    .cart-dropdown::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: 80px;
+        border-width: 0 10px 10px;
+        border-style: solid;
+        border-color: transparent transparent var(--white);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .before-after-slider {
+        height: 250px;
+    }
+    
+    .gallery-main {
+        height: 250px;
+    }
+    
+    .thumb {
+        width: 80px;
+        height: 60px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 1rem;
+        margin: 10% auto;
+    }
+}

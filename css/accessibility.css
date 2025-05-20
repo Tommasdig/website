@@ -1,0 +1,108 @@
+/* 
+ * Accessibility enhancements for Tommaso Digre's Portfolio Website
+ * Author: Manus AI
+ * Date: April 13, 2025
+ */
+
+/* Reduced motion styles */
+.reduced-motion * {
+    transition-duration: 0.001s !important;
+    animation-duration: 0.001s !important;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: more) {
+    :root {
+        --primary-color: #8B5A2B;
+        --secondary-color: #4D5D4A;
+        --text-color: #000000;
+        --accent-color: #1A2530;
+    }
+    
+    .portfolio-info, .blog-content, .product-info {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        color: var(--text-color) !important;
+    }
+    
+    .btn {
+        border-width: 2px !important;
+    }
+    
+    .form-control {
+        border-width: 2px !important;
+    }
+}
+
+/* Focus styles for better keyboard navigation */
+a:focus, button:focus, input:focus, textarea:focus, .form-control:focus {
+    outline: 3px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+}
+
+/* Skip to content link for keyboard users */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    z-index: 9999;
+    transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+/* Improved form field accessibility */
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Improved color contrast */
+.text-muted {
+    color: #5A5A5A !important;
+}
+
+/* Larger click/tap targets for mobile */
+@media (max-width: 767.98px) {
+    .nav-link, .btn, .portfolio-link, .social-link {
+        padding: 0.75rem !important;
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .form-control {
+        min-height: 44px;
+    }
+}
+
+/* Screen reader only text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ARIA support for custom components */
+[role="button"],
+[role="tab"] {
+    cursor: pointer;
+}
+
+/* Improved focus visibility for dark backgrounds */
+.hero a:focus, footer a:focus {
+    outline-color: white !important;
+}

@@ -1,0 +1,17 @@
+{
+  "email": "contact@tommas.no",
+  "phone": "+47 123 45 678",
+  "address": "Oslo, Norway",
+  "social": [
+    {
+      "platform": "Instagram",
+      "url": "https://instagram.com/tommasdigre",
+      "icon": "fa-instagram"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/tommasdigre",
+      "icon": "fa-linkedin"
+    }
+  ]
+}

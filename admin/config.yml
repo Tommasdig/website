@@ -1,0 +1,113 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio Items"
+    folder: "_portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "select", options: ["restoration", "design", "interior"]}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", required: true}
+      - {label: "Description", name: "description", widget: "text"}
+      - label: "Before/After Images"
+        name: "before_after"
+        widget: "object"
+        required: false
+        fields:
+          - {label: "Before Image", name: "before", widget: "image"}
+          - {label: "After Image", name: "after", widget: "image"}
+      - label: "Gallery Images"
+        name: "gallery"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Caption", name: "caption", widget: "string", required: false}
+      - {label: "Detailed Description", name: "body", widget: "markdown"}
+      
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Excerpt", name: "excerpt", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      
+  - name: "products"
+    label: "Shop Products"
+    folder: "_products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Price", name: "price", widget: "number", value_type: "float"}
+      - {label: "Status", name: "status", widget: "select", options: ["Available", "Sold Out"]}
+      - {label: "Description", name: "description", widget: "text"}
+      - label: "Gallery Images"
+        name: "gallery"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Caption", name: "caption", widget: "string", required: false}
+      - {label: "Detailed Description", name: "body", widget: "markdown"}
+      
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "About/CV"
+        name: "about"
+        file: "_data/about.json"
+        fields:
+          - {label: "Profile Image", name: "profile_image", widget: "image"}
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Bio", name: "bio", widget: "text"}
+          - label: "Skills"
+            name: "skills"
+            widget: "list"
+            fields:
+              - {label: "Skill Name", name: "name", widget: "string"}
+              - {label: "Skill Level (0-100)", name: "level", widget: "number", min: 0, max: 100}
+          - label: "Experience"
+            name: "experience"
+            widget: "list"
+            fields:
+              - {label: "Position", name: "position", widget: "string"}
+              - {label: "Company", name: "company", widget: "string"}
+              - {label: "Period", name: "period", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            fields:
+              - {label: "Degree", name: "degree", widget: "string"}
+              - {label: "Institution", name: "institution", widget: "string"}
+              - {label: "Period", name: "period", widget: "string"}
+      
+      - label: "Contact Information"
+        name: "contact"
+        file: "_data/contact.json"
+        fields:
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Phone", name: "phone", widget: "string", required: false}
+          - {label: "Address", name: "address", widget: "text", required: false}
+          - label: "Social Links"
+            name: "social"
+            widget: "list"
+            fields:
+              - {label: "Platform", name: "platform", widget: "select", options: ["Instagram", "LinkedIn", "Facebook", "Twitter", "Pinterest", "Behance", "Other"]}
+              - {label: "URL", name: "url", widget: "string"}
+              - {label: "Icon", name: "icon", widget: "string", required: false, hint: "Font Awesome icon class (e.g. fa-instagram)"}

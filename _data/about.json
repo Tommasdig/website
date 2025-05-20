@@ -1,0 +1,71 @@
+{
+  "profile_image": "/images/uploads/profile-placeholder.jpg",
+  "name": "Tommaso Digre",
+  "title": "Furniture Designer & Restorer",
+  "bio": "Designer with extensive experience in industrial, furniture, and interior design. For the past 3 years, I've focused on furniture restoration specializing in Scandinavian, mid-century, and modern design pieces. My design background helps me select the right materials and aesthetics, while my restoration work has given me valuable woodworking skills and knowledge of furniture construction techniques.",
+  "skills": [
+    {
+      "name": "Furniture Design",
+      "level": 90
+    },
+    {
+      "name": "Furniture Restoration",
+      "level": 85
+    },
+    {
+      "name": "Woodworking",
+      "level": 80
+    },
+    {
+      "name": "Interior Design",
+      "level": 75
+    },
+    {
+      "name": "3D Modeling",
+      "level": 70
+    }
+  ],
+  "experience": [
+    {
+      "position": "Furniture Restorer",
+      "company": "Self-employed",
+      "period": "2020-2023",
+      "description": "Restored and repurposed Scandinavian, mid-century, and modern design furniture pieces. Bought, restored, and sold unique pieces with a focus on quality craftsmanship and design integrity."
+    },
+    {
+      "position": "Freelance Furniture Designer",
+      "company": "Private clients",
+      "period": "2022",
+      "description": "Designed layout, kitchen & bathroom spaces, and furniture pieces. Selected furniture, paint, and curtains for private apartment projects."
+    },
+    {
+      "position": "Freelance Jewellery Designer",
+      "company": "Vincero Collective",
+      "period": "2021-2022",
+      "description": "Designed a men's jewellery line for the Vincero Collective brand."
+    },
+    {
+      "position": "Freelance Industrial Designer",
+      "company": "Polycon Baharain",
+      "period": "2021",
+      "description": "Designed water tanks, road barriers, and outdoor furniture."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master's in Industrial Design",
+      "institution": "Oslo School of Architecture and Design (AHO)",
+      "period": "2017-2019"
+    },
+    {
+      "degree": "Master's in Transportation Design",
+      "institution": "IAAD with Renault & Yamaha",
+      "period": "2015-2017"
+    },
+    {
+      "degree": "Bachelor's in Industrial Design",
+      "institution": "Yarmouk University",
+      "period": "2012-2015"
+    }
+  ]
+}

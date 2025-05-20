@@ -1,0 +1,76 @@
+/* 
+ * Image hover effects - B&W to Color
+ * Author: Manus AI
+ * Date: April 13, 2025
+ */
+
+/* Apply grayscale filter to all portfolio, blog, and product images */
+.portfolio-img-placeholder,
+.blog-img-placeholder,
+.product-img-placeholder,
+.profile-placeholder {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease, transform 0.3s ease;
+}
+
+/* Remove grayscale on hover to show color */
+.portfolio-card:hover .portfolio-img-placeholder,
+.blog-card:hover .blog-img-placeholder,
+.product-card:hover .product-img-placeholder,
+.profile-img:hover .profile-placeholder {
+    filter: grayscale(0%);
+}
+
+/* Add subtle zoom effect on hover for additional visual interest */
+.portfolio-card:hover .portfolio-img-placeholder,
+.blog-card:hover .blog-img-placeholder,
+.product-card:hover .product-img-placeholder {
+    transform: scale(1.05);
+}
+
+/* Hero image should also be grayscale */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    transition: filter 0.8s ease;
+}
+
+/* Hero image changes to color when user hovers over the hero section */
+.hero:hover {
+    filter: grayscale(0%);
+}
+
+/* For before/after sliders in portfolio modals */
+.before-image img,
+.after-image img {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.before-after-slider:hover .before-image img,
+.before-after-slider:hover .after-image img {
+    filter: grayscale(0%);
+}
+
+/* For gallery thumbnails in portfolio modals */
+.thumb img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.thumb:hover img,
+.thumb.active img {
+    filter: grayscale(0%);
+}
+
+/* For gallery main image in portfolio modals */
+.gallery-main img {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.gallery-main:hover img {
+    filter: grayscale(0%);
+}
